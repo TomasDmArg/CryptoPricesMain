@@ -1,0 +1,24 @@
+.title {
+  font-size: 4rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.text {
+  font-family: "Outfit", sans-serif;
+  color: #eee;
+}
+
+.button {
+  padding: 1.5rem 10rem;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #06D6A0;
+  font-weight: 700;
+  text-decoration: none;
+  color: #171a1f;
+  font-size: 2rem;
+  border: none;
+  position: relative;
+  top: 20px;
+}
