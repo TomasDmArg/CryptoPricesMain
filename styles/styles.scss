@@ -1,15 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700&display=swap');
 @import "card.scss";
-$primary:   #06D6A0;
-$secondary: #ff411f;
-$light:     #eeeeee;
-$dark1:     #171A1F;
-$dark2:     #1F2124;
-$dark3:     #303030;
-$dark4:     #404244;
-$title:       "Poppins", sans-serif;
-$title-w:     700;
+@import "dollar.scss";
+@import "global.scss";
 
 
 *{
@@ -17,6 +10,7 @@ $title-w:     700;
     margin: 0mm;
     padding: 0mm;
     font-family: 'Outfit', sans-serif;
+    color: $light;
 }
 html {
     font-size: 62.5%;
@@ -334,7 +328,12 @@ html{
     }
 }
 
-
+.dollar-name-cont-2{
+    display: inline-flex; align-items: baseline;
+}
+.dollar-source{
+    font-weight: 300; margin-left: 10px; color: rgb(238, 238, 238);
+}
 
 
 /*--------------Mobile-------------*/

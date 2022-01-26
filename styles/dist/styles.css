@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700&display=swap");
-.all-card-container {
+.all-card-container, .all-card-container-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin-left: 3.5rem;
@@ -8,12 +8,16 @@
   margin-top: 3rem;
 }
 
+.all-card-container-list {
+  grid-template-columns: 1fr;
+}
+
 .active, #not-found a, .sd, .d-active {
-  color: var(--dark);
+  color: #171A1F;
 }
 
 #seemoredollar {
-  background-color: var(--principal-green);
+  background-color: #06D6A0;
   position: relative;
   top: -3rem;
 }
@@ -40,7 +44,7 @@
 }
 
 .card__name-container > h2 {
-  max-width: 12ch;
+  max-width: 65vw;
 }
 
 .top-title {
@@ -58,19 +62,10 @@
   margin-left: 1rem;
 }
 
-.card__name-container {
-  animation-name: loading-text;
-  animation-duration: 0.8s;
-  animation-iteration-count: infinite;
-}
-
 .price {
-  animation-name: loading-price;
-  animation-duration: 0.8s;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
   height: 3rem;
-  animation-iteration-count: infinite;
 }
 
 .card__name-container--title.up {
@@ -111,9 +106,6 @@
   position: absolute;
   top: 2rem;
   right: 3rem;
-  animation-name: loading-image;
-  animation-duration: 0.8s;
-  animation-iteration-count: infinite;
 }
 
 .card-image > img {
@@ -138,9 +130,13 @@
   text-align: center;
   margin-top: 20rem;
   font-weight: 700;
-  color: var(--dark);
+  color: #171A1F;
   border-radius: 0.9rem;
-  border: 4px solid var(--principal-green);
+  border: 4px solid #06D6A0;
+}
+.card-button:hover, .dollar-button:hover {
+  background-color: #06D6A0;
+  color: #eeeeee;
 }
 
 .card-button-2 {
@@ -151,7 +147,7 @@
   text-align: center;
   margin-top: 20rem;
   font-weight: 500;
-  color: var(--dark);
+  color: #eeeeee;
   border: none;
   margin-left: 10px;
   transition: 0.1s ease-in-out;
@@ -171,7 +167,7 @@
 
 .up {
   font-weight: 400;
-  color: var(--principal-green);
+  color: #06D6A0;
   font-size: 1.8rem;
 }
 
@@ -183,7 +179,7 @@
   position: absolute;
   left: 0;
   top: 8rem;
-  color: var(--principal-green);
+  color: #06D6A0;
   font-size: 2rem;
   display: none;
   transition: ease-in 0.2s;
@@ -191,11 +187,11 @@
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   background-color: transparent;
-  color: var(--dark);
+  color: #171A1F;
   font-size: 2.3rem;
   border: none;
   font-family: "Roboto Mono", monospace;
-  border-bottom: 3px solid var(--dark);
+  border-bottom: 3px solid #171A1F;
 }
 
 .value {
@@ -211,7 +207,7 @@
 }
 
 .converter-input::placeholder {
-  color: var(--dark);
+  color: #171A1F;
   font-weight: 500;
   font-size: 2.3rem;
   font-family: "Outfit", sans-serif;
@@ -222,7 +218,7 @@
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
   margin-left: -10px;
-  background-color: var(--principal-green);
+  background-color: #06D6A0;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -235,7 +231,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .bg-text {
   position: absolute;
-  color: var(--dark);
+  color: #171A1F;
 }
 
 .bg-close {
@@ -258,8 +254,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .card-button:hover, .card-button:hover {
-  background-color: var(--principal-green);
-  color: var(--dark) !important;
+  background-color: #06D6A0;
+  color: #171A1F !important;
   transition: ease-in 0.3s;
   cursor: pointer;
 }
@@ -282,7 +278,7 @@ input[type=number]::-webkit-outer-spin-button {
   margin-left: 0.5rem;
   border-radius: 5px;
   background-color: #06D6A050;
-  border: 2px solid var(--principal-green);
+  border: 2px solid #06D6A0;
   color: #06D6A0;
 }
 
@@ -291,10 +287,10 @@ input[type=number]::-webkit-outer-spin-button {
   width: 30vw;
   height: 3rem;
   font-size: 2rem;
-  font-family: "Inter";
+  font-family: "Outfit", sans-serif;
   border: none;
   color: #06D6A0;
-  border-bottom: 3px solid var(--principal-green);
+  border-bottom: 3px solid #06D6A0;
   background-color: transparent;
 }
 
@@ -313,9 +309,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .search-result {
-  display: none;
+  color: #171A1F;
   font-size: 2rem;
-  background-color: var(--principal-green);
+  background-color: #06D6A0;
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 1rem;
@@ -326,17 +322,18 @@ input[type=number]::-webkit-outer-spin-button {
 
 .search-result > span {
   position: absolute;
-  top: 1.7rem;
+  top: 1.3rem;
   right: 1rem;
 }
 
 .search-result > span > b {
+  color: #171A1F;
   padding: 4px 5px;
   font-size: 1.2rem;
   margin-left: 0.5rem;
   border-radius: 5px;
   background-color: #17171750;
-  border: 2px solid var(--dark);
+  border: 2px solid #171A1F;
 }
 
 .settings_items {
@@ -348,15 +345,15 @@ input[type=number]::-webkit-outer-spin-button {
   z-index: 9999;
   background-color: #40404080;
   width: 20rem;
-  color: var(--light);
+  color: #eeeeee;
   height: 20rem;
 }
 
 .currency_items {
   width: 10rem;
   height: 4rem;
-  color: var(--light);
-  background-color: var(--dark);
+  color: #eeeeee;
+  background-color: #171A1F;
   text-align: center;
   /* padding: 0rem; */
 }
@@ -369,8 +366,8 @@ input[type=number]::-webkit-outer-spin-button {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
   line-height: 4.25rem;
-  background-color: var(--dark);
-  color: var(--light);
+  background-color: #171A1F;
+  color: #eeeeee;
   transition: 0.5s;
 }
 
@@ -379,8 +376,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .currency_items > span.settings__active {
-  color: var(--dark);
-  background-color: var(--principal-green);
+  color: #171A1F;
+  background-color: #06D6A0;
   transition: 0.5s;
 }
 
@@ -390,7 +387,7 @@ input[type=number]::-webkit-outer-spin-button {
   font-weight: var(--title-w);
 }
 
-.dollar-info, .dollar-info-main {
+.dollar-info, .dollar-info-main, .all-card-container .dollar-info-main-list, .all-card-container-list .dollar-info-main-list {
   margin-bottom: 3rem;
   height: 15rem;
   width: calc(80vw/3);
@@ -400,25 +397,25 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .buyDollar {
-  color: var(--principal-green);
+  color: #06D6A0;
   font-weight: 800;
   font-size: 2rem;
 }
 
 .sellDollar {
-  color: var(--down);
+  color: #ff411f;
   font-weight: 800;
   font-size: 2rem;
 }
 
 .sd {
-  background-color: var(--principal-green);
+  background-color: #06D6A0;
   position: relative;
   top: 20px;
 }
 
 .quote {
-  color: var(--light);
+  color: #eeeeee;
   font-weight: 400;
   font-size: 2rem;
   margin-top: 1rem;
@@ -435,7 +432,7 @@ input[type=number]::-webkit-outer-spin-button {
   left: 30px;
   background-color: #1F2124;
   border-radius: 20px;
-  color: var(--light);
+  color: #eeeeee;
   width: fit-content;
   padding: 10px 20px;
 }
@@ -454,12 +451,135 @@ input[type=number]::-webkit-outer-spin-button {
   font-family: "Inter", sans-serif;
 }
 
-.dollar-info-main {
+.dollar-info-main, .all-card-container .dollar-info-main-list, .all-card-container-list .dollar-info-main-list {
   height: 200px;
 }
 
 .dollar-name-cont-main {
   margin-bottom: 0px;
+}
+
+.btn-down {
+  background-color: #ff411f !important;
+  border-color: #ff411f !important;
+}
+
+.t-big {
+  font-size: 2rem !important;
+}
+
+.mode {
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-bottom: -20px;
+}
+.mode__button {
+  position: relative;
+  top: 5px;
+  margin-left: 10px;
+  transition: transform 0.5s ease-in-out;
+}
+.mode__button:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s ease-in-out;
+}
+.mode__button.selected {
+  color: #06D6A0;
+}
+
+.card-container-list {
+  position: relative;
+  height: 60px;
+  background-color: #1F2124;
+  border-bottom: 2px solid #06D6A020;
+}
+.card-container-list .card__name-container--title {
+  color: #eeeeee;
+  font-size: 2rem;
+}
+.card-container-list__container {
+  width: 95%;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 20px 300px 170px 150px 100px 125px 230px;
+  align-items: baseline;
+  margin-left: 2rem;
+  margin-top: 0px;
+}
+.card-container-list__container .container__rank {
+  text-align: center;
+  font-weight: 200;
+  font-size: 2rem;
+}
+.card-container-list__container .container__price {
+  font-size: 2rem;
+}
+.card-container-list__container .container__price.up {
+  font-weight: bold;
+  font-size: 2rem;
+}
+.card-container-list__container .container__price.down {
+  color: #ff411f;
+}
+.card-container-list__container .container__price-ars {
+  font-size: 1.7rem;
+  font-weight: 200;
+}
+.card-container-list__container .container__image {
+  margin-right: 10px;
+}
+.card-container-list__container .container__image--img {
+  position: relative;
+  top: 0.2rem;
+  width: auto;
+  height: 20px;
+}
+.card-container-list__container .container__symbol {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+.card-container-list__container .container__percent {
+  text-align: left;
+  font-weight: 200;
+}
+.card-container-list__container .container__percent.percent.down {
+  font-size: 1.8rem;
+}
+.card-container-list__container .container__percent.percent.up {
+  font-size: 1.8rem;
+}
+.card-container-list__container .container__marketcap {
+  font-size: 1.7rem;
+  font-weight: 200;
+}
+.card-container-list__container .container__supply {
+  position: relative;
+  top: -0.9rem;
+}
+.card-container-list__container .container__supply--total {
+  font-size: 1.7rem;
+  font-weight: 200;
+  text-align: right;
+}
+.card-container-list__container .container__supply--circ {
+  font-size: 1.7rem;
+  font-weight: 400;
+  text-align: right;
+}
+
+.card-container__table-head {
+  display: grid;
+  grid-row: 50px;
+  grid-template-columns: 20px 300px 170px 150px 100px 125px 230px;
+  width: 100%;
+  padding-left: 2rem;
+  margin-top: 5rem;
+  background-color: #06D6A020;
+  border-bottom: 2px solid #06D6A050;
+  border-top: 2px solid #06D6A050;
+}
+.card-container__table-head #name {
+  margin-left: 2rem;
 }
 
 @keyframes goToInd {
@@ -470,34 +590,6 @@ input[type=number]::-webkit-outer-spin-button {
   100% {
     background-color: #fff;
     width: 100vw;
-  }
-}
-@keyframes loading-text {
-  0% {
-    background-color: rgba(250, 250, 250, 0.8);
-    width: 10px;
-  }
-  100% {
-    background-color: rgba(250, 250, 250, 0.3);
-    width: 50%;
-  }
-}
-@keyframes loading-price {
-  0% {
-    background-color: rgba(250, 250, 250, 0.8);
-    width: 10px;
-  }
-  100% {
-    background-color: rgba(250, 250, 250, 0.3);
-    width: 70%;
-  }
-}
-@keyframes loading-image {
-  0% {
-    background-color: rgba(250, 250, 250, 0.6);
-  }
-  100% {
-    background-color: rgba(250, 250, 250, 0.3);
   }
 }
 @keyframes converter {
@@ -573,12 +665,12 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 @media only screen and (max-width: 1024px) {
-  .all-card-container {
+  .all-card-container, .all-card-container-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 
-  .card-container, .dollar-info, .dollar-info-main {
+  .card-container, .dollar-info, .dollar-info-main, .all-card-container .dollar-info-main-list, .all-card-container-list .dollar-info-main-list {
     width: calc(80vw/2);
   }
 
@@ -587,12 +679,12 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 @media only screen and (max-width: 768px) {
-  .all-card-container {
+  .all-card-container, .all-card-container-list {
     display: grid;
     grid-template-columns: 1fr;
   }
 
-  .card-container, .dollar-info, .dollar-info-main {
+  .card-container, .dollar-info, .dollar-info-main, .all-card-container .dollar-info-main-list, .all-card-container-list .dollar-info-main-list {
     width: calc(80vw/1);
   }
 
@@ -622,7 +714,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   .search-container > div > input:focus {
-    background-color: #06d6a020;
+    background-color: #06D6A020;
   }
 
   .top-text {
@@ -647,11 +739,210 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 1.5rem;
   }
 }
+.dollar-converter {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 100px 1fr;
+  margin-left: 40px;
+  margin-bottom: 50px;
+}
+.dollar-converter h2 {
+  display: inline-block;
+  line-height: 50px;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.dollar-converter button {
+  font-size: 1.5rem;
+  margin: 0px 30px 10px 0;
+  padding: 0.7rem 3rem;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  color: #eeeeee;
+  background-color: #303030;
+  border-radius: 0.9rem;
+  border: none;
+}
+.dollar-converter button:focus {
+  background-color: #06D6A090;
+}
+
+.converter__type {
+  margin: 30px 0;
+}
+
+.converter__options {
+  width: 50vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+#qt-t {
+  margin-top: 30px;
+}
+
+#result {
+  font-size: 25px;
+  font-weight: 700;
+  padding: 10px;
+  background-color: #06D6A090;
+  color: #eeeeee;
+  width: fit-content;
+  border: none;
+}
+
+#qtBtn1, #qtBtn2 {
+  font-size: 25px;
+  font-weight: 700;
+  padding: 10px;
+  background-color: #06D6A020;
+  color: #eeeeee;
+  width: fit-content;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+}
+
+#qtBtn1:hover, #qtBtn2:hover {
+  background-color: #06D6A090;
+}
+
+.emoji-img {
+  width: 50px;
+  height: 50px;
+  margin: -15px 20px -15px 0;
+  display: inline-block;
+}
+
+.converter__fee {
+  width: 70px;
+  font-size: 1.5rem;
+  margin: -10px 10px 0px 0;
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: #eeeeee;
+  background-color: #303030;
+  border-radius: 0.9rem;
+  border: none;
+}
+
+.percent-text {
+  font-size: 2rem;
+  color: #eeeeee;
+  font-weight: 600;
+}
+
+.fee-text {
+  margin-top: 10px;
+}
+
+.dollar-name-cont, .dollar-name-cont-main {
+  grid-area: 1/1/2/3;
+  margin-bottom: 50px;
+}
+
+.converter__config {
+  grid-area: 2/1/3/2;
+  background-color: #1F2124;
+  border-radius: 10px;
+  padding: 40px;
+  width: calc(100% - 50px);
+}
+
+.converter__result {
+  grid-area: 2/2/3/3;
+  background-color: #1F2124;
+  border-radius: 10px;
+  padding: 20px;
+  width: calc(100% - 100px);
+}
+.converter__result #qt {
+  width: 200px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #eeeeee;
+  background-color: #303030;
+  border: none;
+  margin-bottom: 40px;
+}
+.converter__result #qt::placeholder {
+  color: #eeeeee;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.converter__result .qt-unit {
+  display: inline-block;
+  font-size: 2rem;
+  margin-left: 10px;
+  font-weight: 600;
+  color: #eeeeee;
+}
+
+#d-ac, #o-ac, #c-ac {
+  background-color: #06D6A090;
+}
+
+#result-disclaimer {
+  font-size: 0.9rem;
+}
+
+.dollar-name {
+  display: inline-flex;
+  align-items: baseline;
+}
+.dollar-name h4 {
+  font-weight: 300;
+  margin-left: 10px;
+}
+
+.all-card-container .dollar-info-main, .all-card-container .dollar-info-main-list, .all-card-container-list .dollar-info-main, .all-card-container-list .dollar-info-main-list {
+  height: 180px;
+}
+.all-card-container .dollar-info-main-list, .all-card-container-list .dollar-info-main-list {
+  grid-area: unset;
+  width: 100%;
+  height: 70px;
+  margin-bottom: 0;
+  border-radius: 0;
+  border: 2px solid #06D6A020;
+  border-left: none;
+  border-right: none;
+}
+.all-card-container .dollar-info-main-list .dollar-name-cont-main, .all-card-container-list .dollar-info-main-list .dollar-name-cont-main {
+  margin-top: 1.2rem;
+  width: 95%;
+  display: inline-flex;
+  align-items: middle;
+  justify-content: space-around;
+}
+.all-card-container .dollar-info-main-list .dollar-name-cont-main .quote, .all-card-container-list .dollar-info-main-list .dollar-name-cont-main .quote {
+  margin-left: 2rem;
+}
+.all-card-container .dollar-info-main-list .dollar-name-cont-main .quote.alt, .all-card-container-list .dollar-info-main-list .dollar-name-cont-main .quote.alt {
+  font-weight: 200;
+}
+.all-card-container .dollar-info-main-list .dollar-name-cont-main .dollar-name-cont-2, .all-card-container-list .dollar-info-main-list .dollar-name-cont-main .dollar-name-cont-2 {
+  justify-self: start;
+}
+
+#seemoredollar {
+  background-color: #06D6A0;
+  color: #171717;
+  padding: 0.5rem 1.3vw;
+  top: -3.5rem;
+}
+
 * {
   box-sizing: border-box;
   margin: 0mm;
   padding: 0mm;
   font-family: "Outfit", sans-serif;
+  color: #eeeeee;
 }
 
 html {
@@ -1015,6 +1306,17 @@ html {
 #not-found a {
   line-height: 100%;
   text-decoration: none;
+}
+
+.dollar-name-cont-2 {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.dollar-source {
+  font-weight: 300;
+  margin-left: 10px;
+  color: #eeeeee;
 }
 
 /*--------------Mobile-------------*/

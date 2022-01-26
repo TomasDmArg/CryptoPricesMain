@@ -1,4 +1,4 @@
-
+@import "global.scss";
 .all-card-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -6,11 +6,15 @@
     margin-right: 3.5rem;
     margin-top: 3rem;
 }
+.all-card-container-list{
+    @extend .all-card-container;
+    grid-template-columns: 1fr;
+}
 .active, .d-active{
-    color: var(--dark);
+    color: $dark1;
 }
 #seemoredollar{
-    background-color: var(--principal-green);
+    background-color: $principal;
     position: relative;
     top: -3rem;
 }
@@ -18,7 +22,7 @@
     margin-bottom: 3rem;
     height: 20rem;
     width: calc(80vw/3);
-    // border: 5px solid var(--principal-green);
+    // border: 5px solid $principal;
     background-color: #1F2124;
     border-radius: 1rem;
     position: relative;
@@ -34,7 +38,7 @@
     max-height: 3.5rem;
 }
 .card__name-container > h2{
-    max-width: 12ch;
+    max-width: 65vw;
 }
 .top-title{
     margin-top: 3rem;
@@ -48,29 +52,21 @@
     font-weight: 200;
     margin-left: 1rem;
 }
-.card__name-container{
-    animation-name: loading-text;
-    animation-duration: .8s;
-    animation-iteration-count: infinite;
-}
 .price{
-    animation-name: loading-price;
-    animation-duration: .8s;
     margin-top: 1.5rem;
     margin-bottom: .5rem;
     height: 3rem;
-    animation-iteration-count: infinite;
 }
 .card__name-container--title.up{
-    color: #06D6A0;
+    color: $principal;
     font-weight: 700;
     font-size: 3rem;
 }
 .card__name-container--title.down{
-    color: #ff411f;
+    color: $secondary;
 }
 .b-up{
-    background-color: #06D6A020;
+    background-color: $principal20;
 }
 .b-down{
     background-color: #ff411f20;
@@ -81,10 +77,10 @@
     font-weight: 400;
 }
 .percent.up{
-    color: #06D6A0;
+    color: $principal;
 }
 .percent.down{
-    color: #ff411f;
+    color: $secondary;
 }
 .card-image{
     border-radius: 0%;
@@ -94,9 +90,6 @@
     position: absolute;
     top: 2rem;
     right: 3rem;
-    animation-name: loading-image;
-    animation-duration: .8s;
-    animation-iteration-count: infinite;
 }
 .card-image > img{
     opacity: .20;
@@ -118,10 +111,15 @@
     text-align: center;
     margin-top: 20rem;
     font-weight: 700;
-    color: var(--dark);
+    color: $dark1;
     border-radius: .9rem;
-    border: 4px solid var(--principal-green);
+    border: 4px solid $principal;
+    &:hover{
+        background-color: $principal;
+        color: $light;
+    }
 }
+
 .card-button-2{
     font-size: 2rem;
     min-width: 0rem;
@@ -130,7 +128,7 @@
     text-align: center;
     margin-top: 20rem;
     font-weight: 500;
-    color: var(--dark);
+    color: $light;
     border: none;
     margin-left: 10px;
     transition: .1s ease-in-out;
@@ -147,7 +145,7 @@
 }
 .up{
     font-weight: 400;
-    color: var(--principal-green);
+    color: $principal;
     font-size: 1.8rem;
 }
 .converter-input{
@@ -158,7 +156,7 @@
     position: absolute;
     left: 0;
     top: 8rem;
-    color: var(--principal-green);
+    color: $principal;
     font-size: 2rem;
     display: none;
     transition: ease-in .2s;
@@ -166,11 +164,11 @@
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     background-color: transparent;
-    color: var(--dark);
+    color: $dark1;
     font-size: 2.3rem;
     border: none;
     font-family: 'Roboto Mono', monospace;
-    border-bottom: 3px solid var(--dark);
+    border-bottom: 3px solid $dark1;
 }
 .value{
     display: none;
@@ -182,13 +180,13 @@
     background-color: #eeeeee70;
     outline: none;
 }
-.converter-input::placeholder{color:var(--dark); font-weight: 500; font-size: 2.3rem; font-family: 'Outfit', sans-serif;}
+.converter-input::placeholder{color:$dark1; font-weight: 500; font-size: 2.3rem; font-family: 'Outfit', sans-serif;}
 .bg{
     animation-duration: .8s;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
     margin-left: -10px;
-    background-color: var(--principal-green);
+    background-color: $principal;
 }
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
@@ -199,7 +197,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .bg-text{
     position: absolute;
-    color: var(--dark);
+    color: $dark1;
 }
 .bg-close{
     height: 1.8rem;
@@ -219,8 +217,8 @@ input[type=number]::-webkit-outer-spin-button {
     animation-fill-mode: forwards;
 }
 .card-button:hover, .card-button:hover{
-    background-color: var(--principal-green);
-    color: var(--dark) !important;
+    background-color: $principal;
+    color: $dark1 !important;
     transition: ease-in .3s;
     cursor: pointer;
 }
@@ -236,19 +234,19 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 1.2rem;
     margin-left: .5rem;
     border-radius: 5px;
-    background-color: #06D6A050;
-    border: 2px solid var(--principal-green);
-    color: #06D6A0;
+    background-color: $principal50;
+    border: 2px solid $principal;
+    color: $principal;
 }
 .search-container > div > input{
     margin-left: 3rem;
     width: 30vw;
     height: 3rem;
     font-size: 2rem;
-    font-family: 'Inter';
+    font-family: 'Outfit', sans-serif;
     border: none;
-    color: #06D6A0;
-    border-bottom: 3px solid var(--principal-green);
+    color: $principal;
+    border-bottom: 3px solid $principal;
     background-color: transparent;
 } 
 .search-container > div > input::placeholder{
@@ -263,9 +261,9 @@ input[type=number]::-webkit-outer-spin-button {
     z-index: 1;
 }
 .search-result{
-    display: none;
+    color: $dark1;
     font-size: 2rem;
-    background-color: var(--principal-green);
+    background-color: $principal;
     padding-top: 1rem;
     padding-bottom: 1rem;
     padding-left: 1rem;
@@ -275,16 +273,18 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .search-result > span{
     position: absolute;
-    top: 1.7rem;
+    top: 1.3rem;
     right: 1rem;
 }
 .search-result > span > b{
+    color: $dark1;
     padding: 4px 5px;
     font-size: 1.2rem;
     margin-left: .5rem;
+
     border-radius: 5px;
     background-color: #17171750;
-    border: 2px solid var(--dark);
+    border: 2px solid $dark1;
 }
 .settings_items{
     display: none;
@@ -295,14 +295,14 @@ input[type=number]::-webkit-outer-spin-button {
     z-index: 9999;
     background-color: #40404080;
     width: 20rem;
-    color: var(--light);
+    color: $light;
     height: 20rem;
 }
 .currency_items{
     width: 10rem;
     height: 4rem;
-    color: var(--light);
-    background-color: var(--dark);
+    color: $light;
+    background-color: $dark1;
     text-align: center;
     /* padding: 0rem; */
 }
@@ -314,16 +314,16 @@ input[type=number]::-webkit-outer-spin-button {
     padding-left: 0.25rem;
     padding-right: 0.25rem;
     line-height: 4.25rem;
-    background-color: var(--dark);
-    color: var(--light);
+    background-color: $dark1;
+    color: $light;
     transition: 0.5s;
 }
 .currency_items > span:nth-child(1){
     margin-right: 1rem;
 }
 .currency_items > span.settings__active{
-    color: var(--dark);
-    background-color: var(--principal-green);
+    color: $dark1;
+    background-color: $principal;
     transition: 0.5s;
 }
 .currencyLabel{
@@ -335,29 +335,29 @@ input[type=number]::-webkit-outer-spin-button {
     margin-bottom: 3rem;
     height: 15rem;
     width: calc(80vw/3);
-    // border: 5px solid var(--principal-green);
+    // border: 5px solid $principal;
     background-color: #1F2124;
     border-radius: 1rem;
     position: relative;
 }
 .buyDollar{
-    color: var(--principal-green);
+    color: $principal;
     font-weight: 800;
     font-size: 2rem;
 }
 .sellDollar{
-    color: var(--down);
+    color: $secondary;
     font-weight: 800;
     font-size: 2rem;
 }
 .sd{
     @extend .active;
-    background-color: var(--principal-green);
+    background-color: $principal;
     position: relative;
     top: 20px;
 }
 .quote{
-    color: var(--light);
+    color: $light;
     font-weight: 400;
     font-size: 2rem;
     margin-top: 1rem;
@@ -373,7 +373,7 @@ input[type=number]::-webkit-outer-spin-button {
     left: 30px;
     background-color: #1F2124;
     border-radius: 20px;
-    color: var(--light);
+    color: $light;
     width: fit-content;
     padding: 10px 20px;
     p{
@@ -402,6 +402,130 @@ input[type=number]::-webkit-outer-spin-button {
     margin-bottom: 0px;
 }
 
+.btn-down{
+    background-color: $secondary !important;
+    border-color: $secondary !important;
+}
+.t-big{
+    font-size: 2rem !important;
+}
+.mode{
+    margin-left: 30px;
+    margin-top: 20px;
+    margin-bottom: -20px;
+    &__button{
+        position: relative;
+        top: 5px;
+        margin-left: 10px;
+        transition: transform 0.5s ease-in-out;
+        &:hover{
+            transform: scale(1.1);
+            transition: transform 0.5s ease-in-out;
+        }
+        &.selected{
+            color: $principal;
+        }
+    }
+}
+
+.card-container-list{
+    position: relative;
+    height: 60px;
+    background-color: $dark2;
+    border-bottom: 2px solid $principal20;
+    .card__name-container--title{
+        color: $light;
+        font-size: 2rem;
+    }
+    &__container{
+        width: 95%;
+        display: grid;
+        grid-template-rows: 1fr;
+        // Rank | Name | Symbol | Price USD/ARS | Change | Marketcap 
+        grid-template-columns: 20px 300px 170px 150px 100px 125px 230px;
+        align-items: baseline;
+        margin-left: 2rem;
+        margin-top: 0px;
+        .container{
+            &__rank{
+                text-align: center;
+                font-weight: 200;
+                font-size: 2rem;
+            }
+            &__price{
+                font-size: 2rem;
+                &.up{
+                    font-weight: bold;
+                    font-size: 2rem;
+                }
+                &.down{
+                    color: $secondary;
+                }
+            }
+            &__price-ars{
+                font-size: 1.7rem;
+                font-weight: 200;
+            }
+            &__image{
+                margin-right: 10px;
+                &--img{
+                    position: relative;
+                    top: .2rem;
+                    width: auto;
+                    height: 20px;
+                }
+            }
+            &__symbol{
+                font-size: 1.5rem;
+                font-weight: 200;
+            }
+            &__percent{
+                text-align: left;
+                font-weight: 200;
+                &.percent.down{
+                    font-size: 1.8rem;
+                }
+                &.percent.up{
+                    font-size: 1.8rem;
+                }
+            }
+            &__marketcap{
+                font-size: 1.7rem;
+                font-weight: 200;
+            }
+            &__supply{
+                position: relative;
+                top: -.9rem;
+                &--total{
+                    font-size: 1.7rem;
+                    font-weight: 200;
+                    text-align: right;
+                }
+                &--circ{
+                    font-size: 1.7rem;
+                    font-weight: 400;
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+.card-container__table-head{
+    display: grid;
+    grid-row: 50px;
+    // Rank | Name | Symbol | Price USD/ARS | Change | Marketcap 
+    grid-template-columns: 20px 300px 170px 150px 100px 125px 230px;
+    width: 100%;
+    padding-left: 2rem;
+    margin-top: 5rem;
+    background-color: $principal20;
+    border-bottom: 2px solid $principal50;
+    border-top: 2px solid $principal50;
+
+    #name{
+        margin-left: 2rem;
+    }
+}
 @keyframes goToInd{
     0%{
         width: 50vw;
@@ -410,35 +534,6 @@ input[type=number]::-webkit-outer-spin-button {
     100%{
         background-color: #fff;
         width: 100vw;
-    }
-}
-@keyframes loading-text{
-    0%{
-        background-color: rgba(250, 250, 250, 0.8);
-        width: 10px;
-    }
-    100%{
-        background-color: rgba(250, 250, 250, 0.3);
-        width: 50%;
-    }
-}
-
-@keyframes loading-price{
-    0%{
-        background-color: rgba(250, 250, 250, 0.8);
-        width: 10px;
-    }
-    100%{
-        background-color: rgba(250, 250, 250, 0.3);
-        width: 70%;
-    }
-}
-@keyframes loading-image{
-    0%{
-        background-color: rgba(250, 250, 250, 0.6);
-    }
-    100%{
-        background-color: rgba(250, 250, 250, 0.3);
     }
 }
 @keyframes converter{
@@ -496,7 +591,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 @keyframes hover-leave{
     0%{
-        background-color: #ff411f;
+        background-color: $secondary;
     }
     50%{
         background-color: #ff411f50;
@@ -546,7 +641,7 @@ input[type=number]::-webkit-outer-spin-button {
         
     }
     .search-container > div > input:focus{
-        background-color: #06d6a020;
+        background-color: $principal20;
     }
     .top-text{
         width: 80vw;

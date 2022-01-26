@@ -2,6 +2,7 @@
     font-size: 4rem;
     font-family: "Poppins", sans-serif;
     font-weight: 700;
+    margin-bottom: -2rem;
 }
 .text{
     font-family: "Outfit", sans-serif;
@@ -19,4 +20,31 @@
     border: none;
     position: relative;
     top: 20px;
+}
+.input{
+    background: rgba(6, 214, 160, 0.1);
+    border: 2px solid #06D6A0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 310px;
+    height: 33px;
+    font-size: 18px;
+    padding-left: 7px;
+    &:focus{
+        outline: none;
+    }
+}
+.textarea{
+    width: 310px;
+    max-width: 310px;
+    min-width: 310px;
+    height: 92px;
+    background: rgba(6, 214, 160, 0.1);
+    border: 2px solid #06D6A0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    color: #eee;
+    &:focus{
+        outline: none;
+    }
 }
