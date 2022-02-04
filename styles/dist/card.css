@@ -11,7 +11,7 @@
 }
 
 .active, .sd, .d-active {
-  color: #171A1F;
+  color: #0c0c11;
 }
 
 #seemoredollar {
@@ -128,7 +128,7 @@
   text-align: center;
   margin-top: 20rem;
   font-weight: 700;
-  color: #171A1F;
+  color: #0c0c11;
   border-radius: 0.9rem;
   border: 4px solid #06D6A0;
 }
@@ -185,11 +185,11 @@
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   background-color: transparent;
-  color: #171A1F;
+  color: #0c0c11;
   font-size: 2.3rem;
   border: none;
   font-family: "Roboto Mono", monospace;
-  border-bottom: 3px solid #171A1F;
+  border-bottom: 3px solid #0c0c11;
 }
 
 .value {
@@ -205,7 +205,7 @@
 }
 
 .converter-input::placeholder {
-  color: #171A1F;
+  color: #0c0c11;
   font-weight: 500;
   font-size: 2.3rem;
   font-family: "Outfit", sans-serif;
@@ -218,6 +218,9 @@
   margin-left: -10px;
   background-color: #06D6A0;
 }
+.bg.down {
+  background-color: #ff411f;
+}
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -229,13 +232,12 @@ input[type=number]::-webkit-outer-spin-button {
 
 .bg-text {
   position: absolute;
-  color: #171A1F;
+  color: #0c0c11;
 }
 
 .bg-close {
-  height: 1.8rem;
-  width: 1.8rem;
-  fill: #171717;
+  font-size: 30px;
+  color: #0c0c11;
   display: none;
   position: absolute;
   top: -1rem;
@@ -253,7 +255,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .card-button:hover, .card-button:hover {
   background-color: #06D6A0;
-  color: #171A1F !important;
+  color: #0c0c11 !important;
   transition: ease-in 0.3s;
   cursor: pointer;
 }
@@ -307,7 +309,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .search-result {
-  color: #171A1F;
+  color: #0c0c11;
   font-size: 2rem;
   background-color: #06D6A0;
   padding-top: 1rem;
@@ -325,13 +327,13 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .search-result > span > b {
-  color: #171A1F;
+  color: #0c0c11;
   padding: 4px 5px;
   font-size: 1.2rem;
   margin-left: 0.5rem;
   border-radius: 5px;
   background-color: #17171750;
-  border: 2px solid #171A1F;
+  border: 2px solid #0c0c11;
 }
 
 .settings_items {
@@ -351,7 +353,7 @@ input[type=number]::-webkit-outer-spin-button {
   width: 10rem;
   height: 4rem;
   color: #eeeeee;
-  background-color: #171A1F;
+  background-color: #0c0c11;
   text-align: center;
   /* padding: 0rem; */
 }
@@ -364,7 +366,7 @@ input[type=number]::-webkit-outer-spin-button {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
   line-height: 4.25rem;
-  background-color: #171A1F;
+  background-color: #0c0c11;
   color: #eeeeee;
   transition: 0.5s;
 }
@@ -374,7 +376,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .currency_items > span.settings__active {
-  color: #171A1F;
+  color: #0c0c11;
   background-color: #06D6A0;
   transition: 0.5s;
 }
@@ -389,7 +391,7 @@ input[type=number]::-webkit-outer-spin-button {
   margin-bottom: 3rem;
   height: 15rem;
   width: calc(80vw/3);
-  background-color: #1F2124;
+  background-color: #13131b;
   border-radius: 1rem;
   position: relative;
 }
@@ -488,7 +490,7 @@ input[type=number]::-webkit-outer-spin-button {
 .card-container-list {
   position: relative;
   height: 60px;
-  background-color: #1F2124;
+  background-color: #171A1F50;
   border-bottom: 2px solid #06D6A020;
 }
 .card-container-list .card__name-container--title {
@@ -499,7 +501,7 @@ input[type=number]::-webkit-outer-spin-button {
   width: 95%;
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: 20px 300px 170px 150px 100px 125px 230px;
+  grid-template-columns: 20px 300px 170px 150px 100px 125px 230px 70px 70px;
   align-items: baseline;
   margin-left: 2rem;
   margin-top: 0px;
@@ -564,20 +566,94 @@ input[type=number]::-webkit-outer-spin-button {
   font-weight: 400;
   text-align: right;
 }
+.card-container-list__container .container__open-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  font-size: 30px;
+  background-color: #303030;
+  border: none;
+  border-radius: 0px;
+  position: relative;
+  top: 1rem;
+  left: 2rem;
+}
+.card-container-list__container .container__exchange-button {
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  padding: 5px;
+  position: relative;
+  top: 1rem;
+  left: 2rem;
+}
+.card-container-list:hover {
+  background-color: #13131b;
+}
+.card-container-list:hover ~ .container__open-button {
+  background-color: #eee !important;
+}
 
 .card-container__table-head {
   display: grid;
   grid-row: 50px;
   grid-template-columns: 20px 300px 170px 150px 100px 125px 230px;
   width: 100%;
-  padding-left: 2rem;
+  padding: 1rem 0 1rem 2rem;
   margin-top: 5rem;
   background-color: #06D6A020;
   border-bottom: 2px solid #06D6A050;
   border-top: 2px solid #06D6A050;
 }
+.card-container__table-head .circ {
+  text-align: right;
+}
+.card-container__table-head h4 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #eeeeee;
+}
 .card-container__table-head #name {
   margin-left: 2rem;
+}
+
+.cv-active {
+  display: block;
+  animation-name: showup;
+}
+
+.cv-inp-active {
+  display: block;
+  animation-name: showup-inp;
+}
+
+.cv-bg-active {
+  animation-name: converter;
+}
+
+.bg-text {
+  margin-top: 1rem;
+  line-height: 3rem;
+}
+
+.cv-hide {
+  animation-name: hide;
+}
+
+.cv-bg-hide {
+  animation-name: converter-hide;
+}
+
+.bg-text__currency {
+  color: #0c0c11;
+}
+.bg-text__currency.inp-res {
+  font-size: 1.7rem;
+}
+
+.value-converted {
+  color: #0c0c11;
 }
 
 @keyframes goToInd {

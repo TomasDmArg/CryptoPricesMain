@@ -3,7 +3,7 @@
 @import "card.scss";
 @import "dollar.scss";
 @import "global.scss";
-
+@import "crypto-main.scss";
 
 *{
     box-sizing: border-box;
@@ -22,6 +22,9 @@ body{
 .header__nav{
     margin-top: 20px;
     margin-left: 20px;
+    &--menu{
+        display: none;
+    }
 }
 #logoContainer{
     width: auto;
@@ -335,7 +338,6 @@ html{
     font-weight: 300; margin-left: 10px; color: rgb(238, 238, 238);
 }
 
-
 /*--------------Mobile-------------*/
 @media only screen and (max-width: 1000px){
     html{
@@ -358,7 +360,21 @@ html{
     .header{
         position: sticky;
         top: 0;
-        backdrop-filter: blur(4px);
+        &.b-h-active{
+            background-color: $dark2;
+        }
+        &__nav{
+            margin-top: unset;
+            margin-left: unset;
+            padding: 10px 30px;
+            background-color: #0c0c11aa;
+            &--menu{
+                background: none;
+                font-size: 30px;
+                border: none;
+                margin-left: auto;
+            }
+        }
     }
     .nav__container--item{
         width: 90vw;
@@ -376,6 +392,25 @@ html{
         position: absolute;
         left: 0;
         top: 7rem;
+        &.n-active{
+            margin-top: 0;
+            padding-top: 70px;
+            display: flex;
+            background-color: $dark2;
+            width: 100vw;
+            position: absolute;
+            top: 0;
+            z-index: -1;
+            li{
+                margin-bottom: 20px;
+                border-bottom: 1px solid #eeeeee50;
+                width: 100%;
+                padding-bottom: 10px;
+                a{
+                    border: none;
+                }
+            }
+        }
     }
     .droplist-container{
         width: 70vw;
@@ -437,6 +472,38 @@ html{
     .button-sm{
         font-size: 1rem;
     }
+    .top-title{
+        font-size: 3rem !important;
+        margin-bottom: 2rem !important;
+    }
+    .card__name-container--title{
+        &.up, &.down{
+            font-size: 2.5rem;
+        }
+    }
+    .card__name-container > .text{
+        font-size: 1.5rem;
+    }
+    .all-card-container .dollar-info-main{
+        height: 230px;
+        margin-bottom: 50px;
+        #seemoredollar{
+            margin-top: 10px;
+            top: -2rem;
+        }
+        section > .dollar-name-cont-2{
+            flex-direction: column;
+            h2{
+                width: 100%;
+            }
+            .dollar-source{
+                margin-left: 0;
+                font-size: 1.7rem;
+                margin-bottom: 1.2rem;
+            }
+        }
+    }
+    
 }
 @keyframes load{
     0%{

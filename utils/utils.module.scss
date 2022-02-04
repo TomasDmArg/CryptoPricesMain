@@ -48,3 +48,8 @@
         outline: none;
     }
 }
+@media (max-width: 768px) {
+    .button{
+        padding: 1rem 5rem;
+    }
+}

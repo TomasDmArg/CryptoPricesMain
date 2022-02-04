@@ -1,8 +1,8 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import React from 'react'
-import Main from '../utils/main'
-import Navbar from '../utils/Navbar/navbar'
+import Head from "next/head";
+import Image from "next/image";
+import React from "react";
+import Main from "../components/main";
+import Navbar from "../components/Navbar/navbar";
 export default function Home() {
   return (
     <React.Fragment>
@@ -11,9 +11,9 @@ export default function Home() {
         <link rel="icon" href="./favicon.ico" />
       </Head>
       <div className="container">
-        <Navbar/>
-        <Main/>
+        <Navbar />
+        <Main />
       </div>
     </React.Fragment>
-  )
+  );
 }

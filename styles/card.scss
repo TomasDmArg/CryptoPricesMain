@@ -9,6 +9,7 @@
 .all-card-container-list{
     @extend .all-card-container;
     grid-template-columns: 1fr;
+    
 }
 .active, .d-active{
     color: $dark1;
@@ -187,6 +188,9 @@
     animation-iteration-count: 1;
     margin-left: -10px;
     background-color: $principal;
+    &.down{
+        background-color: $secondary;
+    }
 }
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
@@ -200,9 +204,8 @@ input[type=number]::-webkit-outer-spin-button {
     color: $dark1;
 }
 .bg-close{
-    height: 1.8rem;
-    width: 1.8rem;
-    fill: #171717;
+    font-size: 30px;
+    color: $dark1;
     display: none;
     position: absolute;
     top: -1rem;
@@ -336,7 +339,7 @@ input[type=number]::-webkit-outer-spin-button {
     height: 15rem;
     width: calc(80vw/3);
     // border: 5px solid $principal;
-    background-color: #1F2124;
+    background-color: $dark2;
     border-radius: 1rem;
     position: relative;
 }
@@ -431,8 +434,9 @@ input[type=number]::-webkit-outer-spin-button {
 .card-container-list{
     position: relative;
     height: 60px;
-    background-color: $dark2;
+    background-color: #171A1F50;
     border-bottom: 2px solid $principal20;
+
     .card__name-container--title{
         color: $light;
         font-size: 2rem;
@@ -442,7 +446,7 @@ input[type=number]::-webkit-outer-spin-button {
         display: grid;
         grid-template-rows: 1fr;
         // Rank | Name | Symbol | Price USD/ARS | Change | Marketcap 
-        grid-template-columns: 20px 300px 170px 150px 100px 125px 230px;
+        grid-template-columns: 20px 300px 170px 150px 100px 125px 230px 70px 70px;
         align-items: baseline;
         margin-left: 2rem;
         margin-top: 0px;
@@ -507,7 +511,35 @@ input[type=number]::-webkit-outer-spin-button {
                     text-align: right;
                 }
             }
+            &__open-button{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 5px;
+                font-size: 30px;
+                background-color: $dark3;
+                border: none;
+                border-radius: 0px;
+                position: relative;
+                top: 1rem;
+                left: 2rem;
+            }
+            &__exchange-button{
+                background-color: transparent;
+                border: none;
+                font-size: 30px;
+                padding: 5px;
+                position: relative;
+                top: 1rem;
+                left: 2rem;
+            }
         }
+    }
+    &:hover{
+        background-color: $dark2;
+    }
+    &:hover ~ .container__open-button{
+        background-color: #eee !important;
     }
 }
 .card-container__table-head{
@@ -516,15 +548,53 @@ input[type=number]::-webkit-outer-spin-button {
     // Rank | Name | Symbol | Price USD/ARS | Change | Marketcap 
     grid-template-columns: 20px 300px 170px 150px 100px 125px 230px;
     width: 100%;
-    padding-left: 2rem;
+    padding: 1rem 0 1rem 2rem;
     margin-top: 5rem;
     background-color: $principal20;
     border-bottom: 2px solid $principal50;
     border-top: 2px solid $principal50;
-
+    .circ{
+        text-align: right;
+    }
+    h4{
+        font-size: 2rem;
+        font-weight: 700;
+        color: $light;
+    }
     #name{
         margin-left: 2rem;
     }
+}
+.cv-active{
+    display: block;
+    animation-name: showup;
+}
+.cv-inp-active{
+    display: block;
+    animation-name: showup-inp;
+}
+.cv-bg-active{
+    animation-name: converter;
+}
+.bg-text{
+    margin-top: 1rem;
+    line-height: 3rem;
+}
+.cv-hide{
+    animation-name: hide;
+}
+.cv-bg-hide{
+    animation-name: converter-hide;
+
+}
+.bg-text__currency{
+    color: $dark1;
+    &.inp-res{
+        font-size: 1.7rem;
+    }
+}
+.value-converted{
+    color: $dark1;
 }
 @keyframes goToInd{
     0%{
@@ -555,8 +625,8 @@ input[type=number]::-webkit-outer-spin-button {
     }
 }
 @keyframes showup{
-    0%{opacity: 0};
-    100%{opacity: 1};
+    0%{opacity: 0; };
+    100%{opacity: 1;};
 }
 @keyframes showup-inp{
     0%{
